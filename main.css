@@ -9,6 +9,10 @@ body {
   flex-direction: column;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 /* Navigation */
 nav {
   position: fixed;
@@ -123,6 +127,7 @@ main {
 #explore button {
   min-height: 1.5rem;
   min-width: 3.5rem;
+  border-radius: 5px;
 }
 
 /* Apps section */
@@ -159,28 +164,34 @@ main {
 }
 
 .app h3 {
+  padding-left: 1.1rem;
   font-size: 6vw;
-  text-wrap: wrap;
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
 }
 
 .app p {
+  padding-left: 1.1rem;
   font-size: 3.5vw;
   align-self: center;
-  text-wrap: wrap;
   margin-bottom: 0.5rem;
 }
 
 .app button {
-  min-height: 5.5vw;
-  min-width: 14vw;
+  height: 5.5vw;
+  width: 14vw;
 }
 
+#unitConvertor h3 {
+  padding: 0;
+}
 /* Footer */
 
 footer {
+  color: aliceblue;
   display: flex;
   flex-direction: row;
+  /* background: linear-gradient(-145deg, rgb(53, 53, 118), black); */
+  background-color: black;
 }
 
 .footerDiv {
@@ -191,4 +202,109 @@ footer {
   align-items: center;
   justify-content: space-evenly;
   font-size: 1.1rem;
+}
+
+/* button special */
+
+button {
+  background-color: rgb(212, 235, 255);
+  font-size: 2.2vw;
+  border-radius: 10px;
+}
+
+#Sign {
+  font-size: clamp(10px, 1rem, 25px);
+  border-radius: 5px;
+}
+
+/* Extrass */
+
+::selection {
+  background-color: aliceblue;
+  color: black;
+}
+
+@media (min-width: 850px) {
+  #apps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .app {
+    transform: scale(0.8);
+    padding: 2rem 2rem 0.8rem 2rem;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    /* margin: 10px 10px 10px 10px; */
+    max-width: 75vw;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    max-height: 40vw;
+    box-shadow: 0 0 8px white;
+  }
+
+  .app h3 {
+    padding-left: 0.5rem;
+    font-size: 3.5vw;
+    margin-bottom: 1.1rem;
+  }
+
+  .app p {
+    align-self: flex-start;
+    padding-left: 1.1rem;
+    font-size: 2.5vw;
+    margin-bottom: 0.5rem;
+  }
+
+  .app button {
+    position: absolute;
+    bottom: 2rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  #apps {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .app {
+    position: relative;
+    transform: scale(0.8);
+    padding: 2rem 2rem 0.8rem 2rem;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    /* margin: 10px 10px 10px 10px; */
+    max-width: 75vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-height: 40vw;
+    box-shadow: 0 0 8px white;
+  }
+  .app h3 {
+    padding-left: 0.5rem;
+    font-size: 3.5vw;
+    margin-bottom: 1.1rem;
+  }
+
+  .app p {
+    padding-left: 1.1rem;
+    font-size: 2.5vw;
+    align-self: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .app button {
+    position: absolute;
+    font-size: 2.5rem;
+    position: inherit;
+    height: 6rem;
+    width: 13rem;
+    right: 2%;
+    bottom: 2%;
+  }
 }
