@@ -5,7 +5,6 @@
 }
 
 body {
-  background-color: #b3c0a4;
   display: flex;
   flex-direction: column;
 }
@@ -18,15 +17,17 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid gainsboro;
+  /* border-bottom: 2px solid gainsboro; */
   background-color: #27233a;
   color: aliceblue;
+  z-index: 10;
 }
 
 nav h1 {
-  padding-left: 2vw;
+  padding-left: 1vw;
   font-size: 4vh;
 }
+
 .childNav {
   display: flex;
   align-items: center;
@@ -62,58 +63,132 @@ nav h3 {
 }
 
 /* overview heading and summary */
+main {
+  background: linear-gradient();
+}
 
-#main {
-  display: flex;
-  flex-direction: column;
-  /* height: auto; */
+#main-content {
   width: 100%;
+  height: 55vw;
+  display: flex;
   margin-top: 10vh;
 }
-
-#overview h3 {
-  font-size: 2.2rem;
+#imgDiv {
+  width: 100%;
+}
+#main-content img {
+  width: 100%;
+  object-fit: fill;
+  filter: blur(2.5px);
+  z-index: -1;
+  filter: brightness(35%);
 }
 
-/* All apps section */
+.textWrap {
+  margin-top: 4vw;
+  position: absolute;
+  left: 2vw;
+}
+#heading {
+  color: white;
+  top: 2vw;
+  left: 3vw;
+  width: 65%;
+  /* height: auto; */
+  font-size: 5.5vw;
+}
+
+#mainPara {
+  color: white;
+  margin-top: 1em;
+  top: 175px;
+  left: 3vw;
+  width: 80%;
+  height: auto;
+  font-size: 3.5vw;
+}
+
+#explore {
+  margin-top: 1em;
+}
+
+#explore button {
+  background-color: rgb(220, 127, 39);
+  color: white;
+  width: 10%;
+  height: 3.5vw;
+  font-size: 2.5vw;
+}
+
+#explore button {
+  min-height: 1.5rem;
+  min-width: 3.5rem;
+}
+
+/* Apps section */
+
+#main {
+  background: linear-gradient(
+    145deg,
+    rgb(53, 53, 118),
+    black,
+    black,
+    rgb(53, 53, 118)
+  );
+  color: aliceblue;
+}
 
 #apps {
-  /* height: auto; */
   display: flex;
   flex-direction: column;
-  margin-bottom: 40px;
-  margin-top: 10px;
-}
-
-.app {
-  background-color: aliceblue;
-  padding-left: 15px;
-  border-left: 3px solid rgb(17, 61, 171);
-  margin-left: 15px;
-  margin-top: 10px;
-}
-
-/* Footer design */
-
-footer {
-  display: flex;
-  width: 100%;
-  height: 110px;
-}
-
-.footerDiv {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
 }
 
-#apps button {
-  margin: 10px 0px 10px 0px;
+.app {
+  padding: 2rem 2rem 0.8rem 2rem;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  margin: 15px 15px 15px 15px;
+  max-width: 65vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vw;
+  box-shadow: 0 0 8px white;
 }
 
-#apps div {
-  border-radius: 15px;
-  max-width: 200px;
+.app h3 {
+  font-size: 6vw;
+  text-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.app p {
+  font-size: 3.5vw;
+  align-self: center;
+  text-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.app button {
+  min-height: 5.5vw;
+  min-width: 14vw;
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  flex-direction: row;
+}
+
+.footerDiv {
+  height: 15vh;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1.1rem;
 }
