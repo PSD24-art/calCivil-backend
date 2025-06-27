@@ -172,10 +172,11 @@ nav h3 {
 }
 
 .app button {
-  height: 7vw;
-  width: 17vw;
+  height: clamp(20px, 2rem, 60px);
+  width: clamp(45px, 5rem, 180px);
   font-size: 1rem;
   border: none;
+  margin-bottom: 2%;
 }
 
 #unitConvertor h3 {
@@ -267,6 +268,8 @@ button {
     position: absolute;
     bottom: 2rem;
     left: 35%;
+    height: clamp(20px, 3rem, 60px);
+    width: clamp(60px, 9rem, 250px);
   }
 }
 
@@ -314,8 +317,8 @@ button {
     width: 10rem; */
     bottom: 2%;
     left: 30%;
-    max-height: 40px;
-    max-width: 150px;
+    height: clamp(20px, 3rem, 80px);
+    width: clamp(60px, 9rem, 250px);
   }
 
   #explore button {
