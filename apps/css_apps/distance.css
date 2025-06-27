@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.wrapper {
+  width: 25vw;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+#title {
+  grid-column: 1 / span 2;
+  font-size: 1.75vw;
+}
+
+#grid {
+  place-items: center;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(7, 4vw);
+}
+
+#text {
+  grid-column: 1 / span 2;
+  font-size: 1.2vw;
+  justify-self: left;
+  padding-left: 1.8vw;
+}
