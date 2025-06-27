@@ -12,27 +12,35 @@
   </head>
   <body>
     <div class="wrapper">
-      <div id="grid">
-        <div id="title">Input your Co-ordinates</div>
-        <div class="x">X1:</div>
-        <div class="y">Y1</div>
-        <div id="x1">
-          <input type="number" placeholder="X1-coordinate" />
+      <div id="flex">
+        <div id="title">
+          Input your Co-ordinates<span style="color: #e4e95d">(UTM)</span>
         </div>
-        <div id="y1">
-          <input type="number" placeholder="Y1-coordinate" />
-        </div>
+        <div class="co-wrap">
+          <div id="left">
+            <div class="x">X1:</div>
 
-        <div class="x">X2:</div>
-        <div class="y">Y2</div>
-        <div id="x1">
-          <input type="number" placeholder="X2-coordinate" />
+            <input id="x1" type="text" placeholder="X1-coordinate" />
+
+            <div class="y">Y1:</div>
+
+            <input id="y1" type="text" placeholder="Y1-coordinate" />
+          </div>
+
+          <div id="right">
+            <div class="x">X2:</div>
+
+            <input id="x2" type="text" placeholder="X2-coordinate" />
+
+            <div class="y">Y2:</div>
+
+            <input id="y2" type="text" placeholder="Y2-coordinate" />
+          </div>
         </div>
-        <div id="y1">
-          <input type="number" placeholder="Y2-coordinate" />
+        <div id="output">
+          <div id="distance">Distance:</div>
+          <div id="answer"></div>
         </div>
-        <div id="text">Calculated Distance:</div>
-        <div id="distance"></div>
       </div>
     </div>
   </body>

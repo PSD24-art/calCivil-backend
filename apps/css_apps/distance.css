@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: aliceblue;
 }
 
 body {
@@ -9,33 +10,100 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  overscroll-behavior: none;
+  background: linear-gradient(135deg, #8399a2, #eef2f3);
 }
 
 .wrapper {
-  width: 25vw;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: fit-content;
+}
+
+#flex {
+  border-radius: 10px;
+  min-height: 28vw;
+  min-width: 40vw;
+  background: linear-gradient(#4b749f, #243748);
+  padding: 10px 10px 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.co-wrap {
   height: auto;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  border: 2px solid black;
-  border-radius: 4px;
+  align-items: center;
 }
 #title {
-  grid-column: 1 / span 2;
-  font-size: 1.75vw;
+  text-wrap: nowrap;
+  font-size: clamp(20px, 7vw, 28px);
+  /* font-size: 4vw; */
 }
 
-#grid {
-  place-items: center;
+#left {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#right {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.x {
+  margin: 1rem 0.5rem 0.5rem 0rem;
+  align-self: flex-start;
+  font-size: 1.3rem;
+}
+
+.y {
+  margin: 1rem 0.5rem 0.5rem 0rem;
+  align-self: flex-start;
+  font-size: 1.3rem;
+}
+
+#distance {
+  align-self: center;
+  font-size: 1.2em;
+}
+
+#output {
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  display: flex;
   width: 90%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(7, 4vw);
 }
 
-#text {
-  grid-column: 1 / span 2;
-  font-size: 1.2vw;
-  justify-self: left;
-  padding-left: 1.8vw;
+#answer {
+  height: 1.5rem;
+  width: 60%;
+  background-color: white;
+  border-radius: 4px;
+}
+
+input {
+  border: none;
+  border-radius: 5px;
+  height: 1.8rem;
+}
+
+@media (max-width: 451px) {
+  #answer {
+    flex-direction: column;
+  }
 }
