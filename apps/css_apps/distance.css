@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: aliceblue;
+  color: white;
 }
 
 body {
@@ -33,6 +33,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  box-shadow: 0 0 5px black;
 }
 
 .co-wrap {
@@ -44,7 +45,7 @@ body {
 }
 #title {
   text-wrap: nowrap;
-  font-size: clamp(20px, 7vw, 28px);
+  font-size: clamp(20px, 7vw, 32px);
   /* font-size: 4vw; */
 }
 
@@ -64,6 +65,15 @@ body {
   align-items: center;
 }
 
+input {
+  padding-left: 10px;
+  border: none;
+  border-radius: 5px;
+  height: 1.8rem;
+  color: rgb(61, 21, 99);
+  font-size: 1rem;
+}
+
 .x {
   margin: 1rem 0.5rem 0.5rem 0rem;
   align-self: flex-start;
@@ -76,9 +86,19 @@ body {
   font-size: 1.3rem;
 }
 
-#distance {
-  align-self: center;
-  font-size: 1.2em;
+.calculate {
+  margin: 0px 15px 15px 15px;
+}
+
+button {
+  color: black;
+  background-color: #ffac58;
+  height: clamp(1.7rem, 2.5rem, 3rem);
+  width: clamp(5rem, 8rem, 6.5rem);
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  box-shadow: 0 0 4px white;
 }
 
 #output {
@@ -89,17 +109,16 @@ body {
   width: 90%;
 }
 
-#answer {
-  height: 1.5rem;
-  width: 60%;
-  background-color: white;
-  border-radius: 4px;
+#distance {
+  align-self: center;
+  font-size: 1.2em;
 }
 
-input {
-  border: none;
-  border-radius: 5px;
-  height: 1.8rem;
+#answer {
+  height: 1.5rem;
+  width: 15vw;
+  background-color: white;
+  border-radius: 4px;
 }
 
 @media (max-width: 451px) {

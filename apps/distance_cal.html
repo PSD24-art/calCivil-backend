@@ -1,12 +1,7 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=
-    , initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>calDistance</title>
     <link rel="stylesheet" href="css_apps/distance.css" />
   </head>
@@ -14,7 +9,7 @@
     <div class="wrapper">
       <div id="flex">
         <div id="title">
-          Input your Co-ordinates<span style="color: #e4e95d">(UTM)</span>
+          Input your Co-ordinates<span style="color: #ffac58">(UTM)</span>
         </div>
         <div class="co-wrap">
           <div id="left">
@@ -37,11 +32,15 @@
             <input id="y2" type="text" placeholder="Y2-coordinate" />
           </div>
         </div>
+        <div class="calculate">
+          <button id="calculate">Calculate</button>
+        </div>
         <div id="output">
           <div id="distance">Distance:</div>
           <div id="answer"></div>
         </div>
       </div>
     </div>
+    <script src="js_apps/distance.js"></script>
   </body>
 </html>
