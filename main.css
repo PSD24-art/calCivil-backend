@@ -266,10 +266,11 @@ button {
   .app button {
     position: absolute;
     bottom: 2rem;
+    left: 35%;
   }
 }
 
-@media (min-width: 1600px) {
+@media (min-width: 1200px) {
   #heading {
     font-size: 4.7vw;
   }
@@ -309,10 +310,12 @@ button {
   .app button {
     position: absolute;
     font-size: 2rem;
-    height: 4rem;
-    width: 10rem;
-    right: 2%;
+    /* height: 4rem;
+    width: 10rem; */
     bottom: 2%;
+    left: 30%;
+    max-height: 40px;
+    max-width: 150px;
   }
 
   #explore button {
