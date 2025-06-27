@@ -10,6 +10,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  width: 100vw;
   overscroll-behavior: none;
   background: linear-gradient(135deg, #8399a2, #eef2f3);
 }
@@ -97,8 +98,14 @@ button {
   width: clamp(5rem, 8rem, 6.5rem);
   border: none;
   border-radius: 5px;
-  font-size: 14px;
-  box-shadow: 0 0 4px white;
+  font-size: 20px;
+  box-shadow: 0 0 4px black;
+  transition: all 0.35s ease;
+}
+button:hover {
+  transform: scale(1.07);
+  cursor: pointer;
+  box-shadow: 0 0 12px black;
 }
 
 #output {
@@ -111,16 +118,25 @@ button {
 
 #distance {
   align-self: center;
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 #answer {
-  height: 1.5rem;
-  width: 15vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.4rem;
+  width: clamp(130px, 14vw, 250px);
   background-color: white;
   border-radius: 4px;
+  font-size: larger;
 }
 
+.result {
+  box-shadow: 0 0 5px whitesmoke;
+  color: black;
+  font-weight: bold;
+}
 @media (max-width: 451px) {
   #answer {
     flex-direction: column;
