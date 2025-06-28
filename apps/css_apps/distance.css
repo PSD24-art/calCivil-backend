@@ -6,11 +6,12 @@
 }
 
 body {
+  padding: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   overscroll-behavior: none;
   background: linear-gradient(135deg, #8399a2, #eef2f3);
 }
@@ -18,16 +19,17 @@ body {
 .wrapper {
   padding: 20px;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  width: fit-content;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 #flex {
   border-radius: 10px;
   min-height: 28vw;
-  min-width: 40vw;
+  min-width: clamp(280px, 30vw, 400px);
   background: linear-gradient(#4b749f, #243748);
   padding: 10px 10px 20px 10px;
   display: flex;
@@ -45,7 +47,8 @@ body {
   align-items: center;
 }
 #title {
-  text-wrap: nowrap;
+  text-align: center;
+  text-wrap: wrap;
   font-size: clamp(20px, 7vw, 32px);
   /* font-size: 4vw; */
 }

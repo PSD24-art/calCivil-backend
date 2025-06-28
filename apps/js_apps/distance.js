@@ -16,6 +16,11 @@ inputs.forEach((inputField) => {
     for (char of inputField.value) {
       if (allowedChars.includes(char)) {
         cleaned += char;
+        inputField.addEventListener("keydown", (e) => {
+          if (e.key === "." && inputField.value.includes(".")) {
+            e.preventDefault();
+          }
+        });
       } else {
         invalid = true;
         alert("Only numbers between 0-9 are allowed");
