@@ -96,7 +96,7 @@ input {
 
 button {
   color: black;
-  background-color: #ffac58;
+  background-color: rgb(255, 153, 135);
   height: clamp(1.7rem, 2.5rem, 3rem);
   width: clamp(5rem, 8rem, 6.5rem);
   border: none;

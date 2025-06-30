@@ -17,9 +17,9 @@
       <div class="selectDiv">
         <div class="shape">
           <p>Select Shape:</p>
-          <select name="nputShape" id="shape">
+          <select name="inputShape" id="shape">
             <option value="square">Square</option>
-            <option value="rectangle">Rectangle</option>
+            <option value="rectangle" selected>Rectangle</option>
             <option value="circle">Circle</option>
           </select>
         </div>
@@ -27,7 +27,13 @@
           <p>Concrete Grade:</p>
           <div class="wrapGrade">
             <p>M</p>
-            <input id="inputGrade" type="text" />
+            <input
+              id="inputGrade"
+              value="0"
+              type="text"
+              maxlength="2"
+              readonly
+            />
             <div class="upDown">
               <button id="up">
                 <span class="material-symbols-outlined">
@@ -54,17 +60,17 @@
         <input class="inputClass" type="text" id="height" maxlength="8" />
       </section>
 
-      <div><button>Calculate</button></div>
+      <div id="calDiv"><button id="calculate">Calculate</button></div>
 
       <section class="output">
         <p class="text">Volume (m<sup>3</sup>)</p>
-        <div id="volume"></div>
+        <div id="volume" class="answer"></div>
         <p class="text">Cement (m<sup>3</sup>)</p>
-        <div id="cement"></div>
+        <div id="cement" class="answer"></div>
         <p class="text">Sand (m<sup>3</sup>)</p>
-        <div id="sand"></div>
+        <div id="sand" class="answer"></div>
         <p class="text">Aggregate (m<sup>3</sup>)</p>
-        <div id="aggregate"></div>
+        <div id="aggregate" class="answer"></div>
       </section>
     </div>
     <script src="js_apps/concrete.js"></script>

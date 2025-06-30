@@ -29,8 +29,12 @@ body {
   background: linear-gradient(-35deg, #031d44, black, black, #031d44);
 }
 
+input {
+  color: black;
+}
+
 #calC {
-  color: #ffb66d;
+  color: rgb(255, 153, 135);
 }
 
 .section1 {
@@ -86,79 +90,6 @@ h2 {
   flex-wrap: nowrap;
 }
 
-.dimensions {
-  padding: 5px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 80%;
-}
-
-.output {
-  width: 80%;
-  padding: 5px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.inputClass {
-  width: 100%;
-  margin-top: 5px;
-  padding: 3px;
-  color: black;
-  border-radius: 5px;
-  border: none;
-  transition: all 0.5s ease;
-}
-
-.inputClass:hover {
-  transform: scale(1.025);
-}
-
-.text {
-  width: 100%;
-  margin-top: 5px;
-}
-
-#inputGrade {
-  width: 25%;
-  height: auto;
-  padding: 4px;
-  box-shadow: 0 0 5px black;
-  background-color: aliceblue;
-  color: #17222c;
-  border-radius: 3px;
-  border: none;
-}
-
-.wrapGrade {
-  width: 35%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.wrapGrade p {
-  margin-right: 10px;
-}
-
-button {
-  margin-top: 5px;
-  width: clamp(65px, 6vw, 80px);
-  height: clamp(25px, 2.5vw, 30px);
-  border-radius: 5px;
-  background-color: #ffb66d;
-  color: #17222c;
-  font-weight: bold;
-  border: none;
-  box-shadow: 0 0 5px rgb(0, 0, 0);
-  transition: all 0.4s ease;
-}
-
-button:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-}
-
 .upDown {
   margin-left: 2px;
   height: 22px;
@@ -191,7 +122,6 @@ button:hover {
 }
 
 #down {
-  border-radius: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -200,8 +130,105 @@ button:hover {
   background-color: rgb(0, 0, 0);
   width: fit-content;
   font-size: medium;
+  border-radius: 1px;
   box-shadow: 0 0 3px white;
   border-radius: 3px;
+}
+
+.dimensions {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80%;
+}
+
+.inputClass {
+  width: 100%;
+  margin: 2.5px;
+  padding: 4px;
+  padding-left: 6px;
+  color: black;
+  border-radius: 5px;
+  border: none;
+  transition: all 0.5s ease;
+}
+
+.inputClass:hover {
+  transform: scale(1.025);
+  border: none;
+}
+
+.text {
+  width: 100%;
+  /* margin-top: 5px; */
+  align-content: center;
+}
+
+#inputGrade {
+  width: 25%;
+  height: auto;
+  padding: 4px;
+  box-shadow: 0 0 5px black;
+  background-color: aliceblue;
+  color: #17222c;
+  border-radius: 3px;
+  border: none;
+}
+
+.wrapGrade {
+  width: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.wrapGrade p {
+  margin-right: 10px;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+button {
+  margin: 8px;
+  margin-right: 0;
+  width: clamp(60px, 5.5vw, 80px);
+  height: clamp(22px, 2.3vw, 30px);
+  border-radius: 5px;
+  background-color: rgb(255, 153, 135);
+  color: #17222c;
+  font-weight: bold;
+  border: none;
+  box-shadow: 0 0 5px rgb(0, 0, 0);
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+
+#calDiv {
+  width: 75%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.output {
+  width: 80%;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.answer {
+  width: 100%;
+  background-color: aliceblue;
+  height: 75%;
+  border-radius: 4px;
+  color: #000000;
+  text-align: center;
+  padding: 3px;
 }
 
 @media (min-width: 750px) {
