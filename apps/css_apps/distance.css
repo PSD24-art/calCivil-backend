@@ -30,7 +30,7 @@ body {
   border-radius: 10px;
   min-height: 28vw;
   min-width: clamp(280px, 30vw, 400px);
-  background: linear-gradient(#4b749f, #243748);
+  background: linear-gradient(-35deg, #031d44, black, black, #031d44);
   padding: 10px 10px 20px 10px;
   display: flex;
   flex-direction: column;
@@ -105,6 +105,7 @@ button {
   box-shadow: 0 0 4px black;
   transition: all 0.35s ease;
 }
+
 button:hover {
   transform: scale(1.07);
   cursor: pointer;

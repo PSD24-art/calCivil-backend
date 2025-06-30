@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calConcrete</title>
+    <link rel="stylesheet" href="css_apps/concrete.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h2><span id="calC">calC</span>oncrete</h2>
+      <div class="selectDiv">
+        <div class="shape">
+          <p>Select Shape:</p>
+          <select name="nputShape" id="shape">
+            <option value="square">Square</option>
+            <option value="rectangle">Rectangle</option>
+            <option value="circle">Circle</option>
+          </select>
+        </div>
+        <div class="grade">
+          <p>Concrete Grade:</p>
+          <div class="wrapGrade">
+            <p>M</p>
+            <input id="inputGrade" type="text" />
+            <div class="upDown">
+              <button id="up">
+                <span class="material-symbols-outlined">
+                  keyboard_arrow_up
+                </span></button
+              ><button id="down">
+                <span class="material-symbols-outlined">
+                  keyboard_arrow_down
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="dimensions">
+        <p class="text">Length (m) :</p>
+        <input class="inputClass" type="text" id="length" maxlength="8" />
+        <p class="text">Width (m) :</p>
+        <input class="inputClass" type="text" id="width" maxlength="8" />
+        <p class="text">Radius (m) :</p>
+        <input class="inputClass" type="text" id="radius" maxlength="8" />
+        <p class="text">Height (m) :</p>
+        <input class="inputClass" type="text" id="height" maxlength="8" />
+      </section>
+
+      <div><button>Calculate</button></div>
+
+      <section class="output">
+        <p class="text">Volume (m<sup>3</sup>)</p>
+        <div id="volume"></div>
+        <p class="text">Cement (m<sup>3</sup>)</p>
+        <div id="cement"></div>
+        <p class="text">Sand (m<sup>3</sup>)</p>
+        <div id="sand"></div>
+        <p class="text">Aggregate (m<sup>3</sup>)</p>
+        <div id="aggregate"></div>
+      </section>
+    </div>
+    <script src="js_apps/concrete.js"></script>
+  </body>
+</html>
