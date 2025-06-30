@@ -6,7 +6,7 @@
 
 body {
   min-width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   display: flex;
@@ -26,7 +26,6 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* border-bottom: 2px solid gainsboro; */
   background-color: #031d44;
   color: aliceblue;
   z-index: 10;
@@ -34,7 +33,7 @@ nav {
 
 nav h1 {
   padding-left: 1vw;
-  font-size: 31px;
+  font-size: clamp(20px, 2.2vw, 31px);
 }
 
 .childNav {
@@ -44,8 +43,6 @@ nav h1 {
   gap: 4vw;
   margin-right: 2vh;
   width: 50vw;
-  height: auto;
-  /* flex-shrink: 1; */
   flex-wrap: wrap;
 }
 
@@ -55,39 +52,38 @@ nav h1 {
 
 .option {
   min-width: 8vw;
-  /* text-wrap: wrap; */
-}
-nav label {
 }
 
 nav button {
   height: 2rem;
   width: 5rem;
   min-width: 3.5rem;
-  flex-shrink: 1;
 }
 
 nav h3 {
-  font-size: 1.25rem;
+  font-size: clamp(16px, 1.25rem, 22px);
 }
 
-/* overview heading and summary */
-
+/* Overview */
 #main-content {
   width: 100%;
-  height: 55vw;
+  height: clamp(300px, 55vw, 600px);
+  min-height: 400px;
   display: flex;
   margin-top: 8vh;
+  z-index: -4;
 }
+
 #imgDiv {
   width: 100%;
+  height: fit-content;
 }
+
 #main-content img {
   width: 100%;
-  object-fit: fill;
-  filter: blur(2.5px);
-  z-index: -1;
-  filter: brightness(35%);
+  object-fit: cover;
+  filter: brightness(35%) blur(2.5px);
+  z-index: -2;
 }
 
 .textWrap {
@@ -95,23 +91,18 @@ nav h3 {
   position: absolute;
   left: 2vw;
 }
+
 #heading {
   color: white;
-  top: 2vw;
-  left: 3vw;
   width: 65%;
-  /* height: auto; */
-  font-size: 5.5vw;
+  font-size: clamp(24px, 5vw, 48px);
 }
 
 #mainPara {
   color: white;
   margin-top: 1em;
-  top: 175px;
-  left: 3vw;
   width: 80%;
-  height: auto;
-  font-size: 3.5vw;
+  font-size: clamp(16px, 3.5vw, 28px);
 }
 
 #explore {
@@ -121,14 +112,13 @@ nav h3 {
 #explore button {
   background-color: rgb(255, 153, 135);
   color: black;
-  width: clamp(45px, 11%, 135px);
-  height: clamp(12px, 6vw, 55px);
-  font-size: 3vw;
+  width: clamp(60px, 11%, 135px);
+  height: clamp(30px, 6vw, 55px);
+  font-size: clamp(16px, 2.2vw, 22px);
   border: none;
 }
 
-/* Apps section */
-
+/* Apps */
 #main {
   background: linear-gradient(145deg, #031d44, black, black, #031d44);
   color: aliceblue;
@@ -143,40 +133,42 @@ nav h3 {
 }
 
 .app {
-  padding: 2rem 2rem 0.8rem 2rem;
+  padding: 2rem;
   border: 1px solid transparent;
   border-radius: 20px;
-  margin: 15px 15px 15px 15px;
+  margin: 15px;
   max-width: 65vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 40vw;
+  justify-content: space-between;
+  min-height: clamp(220px, 40vw, 400px);
   box-shadow: 0 0 8px white;
 }
 
 .app h3 {
   padding-left: 1.1rem;
-  font-size: 6vw;
-  margin-bottom: 1.1rem;
+  font-size: clamp(20px, 6vw, 32px);
+  margin-bottom: 1rem;
 }
 
 .app p {
   padding-left: 1.1rem;
-  font-size: 3.5vw;
+  font-size: clamp(16px, 3.5vw, 24px);
   align-self: center;
   margin-bottom: 0.5rem;
 }
 
 .app button {
-  height: clamp(20px, 2rem, 60px);
-  width: clamp(45px, 5rem, 180px);
-  font-size: 1rem;
+  height: clamp(40px, 2rem, 60px);
+  width: clamp(80px, 5rem, 180px);
+  font-size: clamp(14px, 1rem, 20px);
   border: none;
-  margin-top: AUTO;
+  margin-top: auto;
   margin-bottom: 2%;
+  align-self: center;
 }
+
 .calC {
   color: rgb(255, 114, 89);
 }
@@ -184,13 +176,12 @@ nav h3 {
 #unitConvertor h3 {
   padding: 0;
 }
-/* Footer */
 
+/* Footer */
 footer {
   color: aliceblue;
   display: flex;
   flex-direction: row;
-  /* background: linear-gradient(-145deg, rgb(53, 53, 118), black); */
   background-color: black;
 }
 
@@ -201,11 +192,10 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  font-size: 1.1rem;
+  font-size: clamp(14px, 1.1rem, 20px);
 }
 
-/* button special */
-
+/* Buttons */
 button:hover {
   cursor: pointer;
 }
@@ -213,25 +203,25 @@ button:hover {
 button {
   background-color: rgb(255, 153, 135);
   color: black;
-  font-size: 2.2vw;
+  font-size: clamp(14px, 2vw, 20px);
   border-radius: 6.5px;
 }
 
 #Sign {
   width: clamp(65px, 6.5vw, 100px);
   height: clamp(30px, 3.5vh, 60px);
-  font-size: clamp(20px, 1.1rem, 25px);
+  font-size: clamp(16px, 1.1rem, 25px);
   border-radius: 5px;
   border: none;
 }
 
-/* Extrass */
-
+/* Selection */
 ::selection {
   background-color: aliceblue;
   color: black;
 }
 
+/* Media Queries */
 @media (min-width: 850px) {
   #apps {
     display: grid;
@@ -239,101 +229,55 @@ button {
   }
 
   .app {
-    position: relative;
-    transform: scale(0.8);
-    padding: 2rem 2rem 0.8rem 2rem;
-    border: 1px solid transparent;
-    border-radius: 20px;
-    max-width: 75vw;
-    display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
+    max-width: 75vw;
     max-height: 40vw;
-    box-shadow: 0 0 8px white;
   }
 
   .app h3 {
-    padding-left: 0.5rem;
-    font-size: 3.5vw;
-    margin-bottom: 1.1rem;
+    font-size: clamp(18px, 3.5vw, 28px);
   }
 
   .app p {
+    font-size: clamp(14px, 2.5vw, 22px);
     align-self: flex-start;
-    padding-left: 1.1rem;
-    font-size: 2.5vw;
-    margin-bottom: 0.5rem;
   }
 
   .app button {
-    font-size: larger;
-    position: absolute;
-    bottom: 2%;
-    left: 40%;
-    height: clamp(20px, 2.5rem, 50px);
-    width: clamp(60px, 5.5rem, 200px);
+    font-size: clamp(14px, 1.1rem, 22px);
+    height: clamp(40px, 2.5rem, 50px);
+    width: clamp(80px, 5.5rem, 200px);
   }
 }
 
-@media (min-width: 900px) {
-  #main {
-    min-width: 100vw;
-    min-height: 100vh;
+@media (min-width: 1200px) {
+  #heading {
+    font-size: clamp(28px, 4.7vw, 64px);
   }
 
-  #heading {
-    font-size: 4.7vw;
-  }
   #apps {
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
 
   .app {
-    position: relative;
-    transform: scale(0.8);
-    padding: 2rem 2rem 0.8rem 2rem;
-    border: 1px solid transparent;
-    border-radius: 20px;
-    min-width: 100%;
-    /* max-width: 75vw; */
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100%;
-    /* max-height: 40vw; */
-    box-shadow: 0 0 8px white;
-  }
-  .app h3 {
-    padding-left: 0.5rem;
-    font-size: 3.5vw;
-    margin-bottom: 1.1rem;
   }
 
   .app p {
-    padding-left: 0.5rem;
-    font-size: 2.5vw;
     align-self: center;
-    margin-bottom: 0.5rem;
   }
 
   .app button {
-    position: absolute;
-    font-size: clamp(10px, 1.2rem, 20px);
-    bottom: 2%;
-    left: 30%;
-    height: clamp(20px, 2.5rem, 50px);
-    width: clamp(60px, 5.5rem, 200px);
+    font-size: clamp(14px, 1.2rem, 24px);
+    height: clamp(40px, 2.5rem, 50px);
+    width: clamp(80px, 5.5rem, 200px);
   }
 
   #explore button {
-    font-size: 2.2rem;
-    height: 4.5rem;
-    width: 10%;
-    margin: none;
-    left: 0;
-    padding-left: none;
+    font-size: clamp(16px, 2.2rem, 36px);
+    height: clamp(40px, 4.5rem, 60px);
+    width: clamp(100px, 10%, 160px);
   }
 }

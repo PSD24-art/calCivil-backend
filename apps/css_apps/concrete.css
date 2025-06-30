@@ -57,7 +57,9 @@ option {
 }
 
 h2 {
-  margin-bottom: 10px;
+  font-family: monospace;
+  margin-top: 20px;
+  margin-bottom: 15px;
   text-align: center;
   font-size: 2.5rem;
 }
