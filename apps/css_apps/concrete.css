@@ -109,6 +109,11 @@ h2 {
   user-select: none;
 }
 
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
 #up {
   display: flex;
   align-items: center;
@@ -151,7 +156,7 @@ h2 {
   padding-left: 6px;
   color: black;
   border-radius: 5px;
-  border: none;
+  border: 0px solid black;
   transition: all 0.5s ease;
 }
 
@@ -167,14 +172,14 @@ h2 {
 }
 
 #inputGrade {
-  width: 25%;
+  width: 28%;
   height: auto;
   padding: 4px;
   box-shadow: 0 0 5px black;
   background-color: aliceblue;
   color: #17222c;
   border-radius: 3px;
-  border: none;
+  border: 0px solid black;
 }
 
 .wrapGrade {
@@ -185,7 +190,7 @@ h2 {
 }
 
 .wrapGrade p {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 button:hover {

@@ -9,22 +9,57 @@ let volume = document.getElementById("volume");
 let calculate = document.getElementById("calculate");
 let inputGrade = document.getElementById("inputGrade");
 
+let inputClass = document.querySelectorAll(".inputClass");
 let arr = "0123456789.";
 
-// up down event listeners for grade selection
+inputClass.forEach((input) => {
+  input.addEventListener("input", () => {
+    let val = input.value.trim();
 
+    for (char of val)
+      if (!arr.includes(char)) {
+        input.style.border = "3px solid red";
+      } else {
+        input.style.border = "3px solid Green";
+      }
+  });
+});
+
+// up down event listeners for grade selection
+let concreteGrade = 0;
+let i = 0;
+let firstJump = false;
 let up = document.getElementById("up");
 let down = document.getElementById("down");
-let i = 0;
 
 up.addEventListener("click", () => {
-  if (i < 80) i += 5;
+  if (i < 25) {
+    if (i === 5) {
+      i = 7.5;
+    } else if (i === 7.5) {
+      i += 2.5;
+    } else {
+      i += 5;
+    }
+  }
   inputGrade.value = i;
+  concreteGrade = i;
+  console.log(concreteGrade);
 });
 
 down.addEventListener("click", () => {
-  if (i > 5) i -= 5;
+  if (i > 5) {
+    if (i === 10) {
+      i = 7.5;
+    } else if (i === 7.5) {
+      i = 5;
+    } else {
+      i -= 5;
+    }
+  }
   inputGrade.value = i;
+  concreteGrade = i;
+  console.log(concreteGrade);
 });
 
 //Disabling inputs for related shpes
@@ -35,45 +70,106 @@ shape.addEventListener("change", () => {
     length.disabled = true;
     width.disabled = true;
     radius.disabled = false;
-
-    volumeUsingRadius();
   } else if (shape.value === "square") {
     length.disabled = false;
     width.disabled = true;
     radius.disabled = true;
-
-    volumeUsingLength();
   } else {
     length.disabled = false;
     width.disabled = false;
     radius.disabled = true;
-
-    volumeBySquare();
   }
 });
 
 //Calculate Volume Functions based on their respective shape
-function volumeUsingLength() {
-  calculate.addEventListener("click", () => {
-    let prod =
-      Number(length.value) * Number(width.value) * Number(height.value);
-    volume.innerText = prod.toFixed(3);
-  });
-}
 
-function volumeBySquare() {
-  calculate.addEventListener("click", () => {
-    let prod =
-      Number(length.value) * Number(length.value) * Number(height.value);
-    volume.innerText = prod.toFixed(3);
-  });
-}
+calculate.addEventListener("click", () => {
+  let vol = 0;
 
-function volumeUsingRadius() {
-  calculate.addEventListener("click", () => {
-    let area = 3.14 * Number(radius.value) ** 2;
-    let vol = area * Number(height.value);
+  if (shape.value === "circle") {
+    vol = 3.14 * Number(radius.value) ** 2 * Number(height.value);
+  } else if (shape.value === "square") {
+    vol = Number(length.value) * Number(length.value) * Number(height.value);
+  } else {
+    vol = Number(length.value) * Number(width.value) * Number(height.value);
+  }
 
-    volume.innerText = vol.toFixed(3);
-  });
+  prod = vol;
+  volume.innerText = prod.toFixed(3);
+  setRatio(); // ✅ This will work no matter the shape
+});
+
+// Quantity calculations
+let cement = document.getElementById("cement");
+let sand = document.getElementById("sand");
+let aggregate = document.getElementById("aggregate");
+let sandRatio = 0;
+let aggRatio = 0;
+let dryVolume = 0;
+let cementQuant = 0;
+let sandQuant = 0;
+let aggQuant = 0;
+
+function setRatio() {
+  if (i == 5) {
+    sandRatio = 5;
+    aggRatio = 10;
+    dryVolume = prod * 1.54;
+    cementQuant = (1 / (1 + sandRatio + aggRatio)) * dryVolume;
+    sandQuant = (sandRatio / (1 + sandRatio + aggRatio)) * dryVolume;
+    aggQuant = (aggRatio / (1 + sandRatio + aggRatio)) * dryVolume;
+    cement.innerText = cementQuant.toFixed(3);
+    sand.innerText = sandQuant.toFixed(3);
+    aggregate.innerText = aggQuant.toFixed(3);
+  } else if (i === 7.5) {
+    sandRatio = 4;
+    aggRatio = 8;
+    dryVolume = prod * 1.54;
+    cementQuant = (1 / (1 + sandRatio + aggRatio)) * dryVolume;
+    sandQuant = (sandRatio / (1 + sandRatio + aggRatio)) * dryVolume;
+    aggQuant = (aggRatio / (1 + sandRatio + aggRatio)) * dryVolume;
+    cement.innerText = cementQuant.toFixed(3);
+    sand.innerText = sandQuant.toFixed(3);
+    aggregate.innerText = aggQuant.toFixed(3);
+  } else if (i === 10) {
+    sandRatio = 3;
+    aggRatio = 6;
+    dryVolume = prod * 1.54;
+    cementQuant = (1 / (1 + sandRatio + aggRatio)) * dryVolume;
+    sandQuant = (sandRatio / (1 + sandRatio + aggRatio)) * dryVolume;
+    aggQuant = (aggRatio / (1 + sandRatio + aggRatio)) * dryVolume;
+    cement.innerText = cementQuant.toFixed(3);
+    sand.innerText = sandQuant.toFixed(3);
+    aggregate.innerText = aggQuant.toFixed(3);
+  } else if (i === 15) {
+    sandRatio = 2;
+    aggRatio = 4;
+    dryVolume = prod * 1.54;
+    cementQuant = (1 / (1 + sandRatio + aggRatio)) * dryVolume;
+    sandQuant = (sandRatio / (1 + sandRatio + aggRatio)) * dryVolume;
+    aggQuant = (aggRatio / (1 + sandRatio + aggRatio)) * dryVolume;
+    cement.innerText = cementQuant.toFixed(3);
+    sand.innerText = sandQuant.toFixed(3);
+    aggregate.innerText = aggQuant.toFixed(3);
+  } else if (i === 20) {
+    sandRatio = 1.5;
+    aggRatio = 3;
+    dryVolume = prod * 1.54;
+    cementQuant = (1 / (1 + sandRatio + aggRatio)) * dryVolume;
+    sandQuant = (sandRatio / (1 + sandRatio + aggRatio)) * dryVolume;
+    aggQuant = (aggRatio / (1 + sandRatio + aggRatio)) * dryVolume;
+    cement.innerText = cementQuant.toFixed(3);
+    sand.innerText = sandQuant.toFixed(3);
+    aggregate.innerText = aggQuant.toFixed(3);
+  } else {
+    sandRatio = 1;
+    aggRatio = 2;
+    dryVolume = prod * 1.54;
+    cementQuant = (1 / (1 + sandRatio + aggRatio)) * dryVolume;
+    sandQuant = (sandRatio / (1 + sandRatio + aggRatio)) * dryVolume;
+    aggQuant = (aggRatio / (1 + sandRatio + aggRatio)) * dryVolume;
+    cement.innerText = cementQuant.toFixed(3);
+    sand.innerText = sandQuant.toFixed(3);
+    aggregate.innerText = aggQuant.toFixed(3);
+  }
 }
