@@ -2,8 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   min-width: 100%;
   min-height: 100%;
@@ -119,12 +123,20 @@ nav h3 {
 }
 
 #explore button {
-  background-color: rgb(255, 153, 135);
-  color: black;
+  /* background-color: rgb(255, 153, 135);
+  color: black; */
   width: clamp(45px, 11%, 135px);
   height: clamp(12px, 6vw, 55px);
   font-size: 3vw;
-  border: none;
+
+  background-color: transparent;
+  color: white;
+}
+
+#explore button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  background-color: rgb(255, 114, 89);
 }
 
 /* Apps section */
@@ -173,10 +185,14 @@ nav h3 {
   height: clamp(20px, 2rem, 60px);
   width: clamp(45px, 5rem, 180px);
   font-size: 1rem;
-  border: none;
-  margin-top: AUTO;
+
+  margin-top: auto;
   margin-bottom: 2%;
+
+  background-color: transparent;
+  color: white;
 }
+
 .calC {
   color: rgb(255, 114, 89);
 }
@@ -208,6 +224,8 @@ footer {
 
 button:hover {
   cursor: pointer;
+  transform: scale(1.1);
+  background-color: rgb(255, 114, 89);
 }
 
 button {
@@ -215,6 +233,7 @@ button {
   color: black;
   font-size: 2.2vw;
   border-radius: 0.5rem;
+  border: 2px solid rgb(255, 153, 135);
 }
 
 #Sign {
@@ -222,7 +241,14 @@ button {
   height: clamp(30px, 2.5vh, 60px);
   font-size: clamp(15px, 1.3rem, 25px);
   border-radius: 5px;
-  border: none;
+  background-color: transparent;
+  color: white;
+}
+
+#Sign:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  background-color: rgb(255, 114, 89);
 }
 
 /* Extrass */
@@ -232,7 +258,7 @@ button {
   color: black;
 }
 
-@media (min-width: 850px) {
+@media (min-width: 700px) {
   #apps {
     display: grid;
     grid-template-columns: 1fr 1fr;
