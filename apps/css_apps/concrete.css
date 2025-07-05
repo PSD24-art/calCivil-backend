@@ -150,9 +150,10 @@ h2 {
 }
 
 .inputClass {
+  min-height: 25px;
   width: 100%;
   margin: 2.5px;
-  padding: 4px;
+  padding: 2px;
   padding-left: 6px;
   color: black;
   border-radius: 5px;

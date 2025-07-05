@@ -55,6 +55,6 @@ function calculate() {
   console.log(sqrt);
 
   let answer = document.querySelector("#answer");
-  answer.innerText = sqrt + " meters";
+  answer.innerText = sqrt + " m";
   answer.classList.add("result");
 }
