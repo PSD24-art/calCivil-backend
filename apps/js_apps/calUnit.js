@@ -23,7 +23,7 @@ const calculator = {
 calculate.addEventListener("click", () => {
   let selectedInputUnit = inputUnit.value;
   let selectedOutput = outputUnit.value;
-  let enteredNumber = Number(inputNumber.value).trim();
+  let enteredNumber = Number(inputNumber.value.trim());
 
   let answer = calculator.convert(
     enteredNumber,
