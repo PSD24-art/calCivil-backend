@@ -13,7 +13,7 @@ body {
   height: 100%;
   width: 100%;
   overscroll-behavior: none;
-  background: linear-gradient(135deg, #8399a2, #eef2f3);
+  background: linear-gradient(135deg, #a6e6ff, #fdffff);
 }
 
 .wrapper {
