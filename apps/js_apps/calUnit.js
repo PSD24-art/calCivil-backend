@@ -32,3 +32,19 @@ calculate.addEventListener("click", () => {
   );
   outputNumber.value = answer.toFixed(3);
 });
+
+const calculates = {
+  convertor(value, fromUnit, toUnit) {
+    let units = {
+      m: 1,
+      mm: 1000,
+      cm: 100,
+      km: 0.001,
+      inch: 39.37,
+      ft: 3.28,
+      yard: 1.09361,
+      mile: 0.000621371,
+    };
+    return (value * units[toUnit]) / units[fromUnit];
+  },
+};

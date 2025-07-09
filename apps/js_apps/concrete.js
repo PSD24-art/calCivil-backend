@@ -28,7 +28,6 @@ inputClass.forEach((input) => {
 // up down event listeners for grade selection
 let concreteGrade = 0;
 let i = 0;
-let firstJump = false;
 let up = document.getElementById("up");
 let down = document.getElementById("down");
 
@@ -96,7 +95,7 @@ calculate.addEventListener("click", () => {
 
   prod = vol;
   volume.innerText = prod.toFixed(3);
-  setRatio(); // ✅ This will work no matter the shape
+  setRatio();
 });
 
 // Quantity calculations
@@ -111,7 +110,7 @@ let sandQuant = 0;
 let aggQuant = 0;
 
 function setRatio() {
-  if (i == 5) {
+  if (i === 5) {
     sandRatio = 5;
     aggRatio = 10;
     dryVolume = prod * 1.54;
