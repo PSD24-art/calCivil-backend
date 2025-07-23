@@ -110,7 +110,7 @@ calculate.addEventListener("click", () => {
   const ratio = mixRatios[concreteGrade];
 
   if (!ratio) {
-    alert("Invalid concrete grade selected or not supported.");
+    alert("Concrete grade cannot be 0");
     return;
   }
 
