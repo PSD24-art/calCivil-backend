@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM Loaded fully");
   let brickLength = document.getElementById("brickLength");
   let brickHeight = document.getElementById("brickHeight");
   let brickWidth = document.getElementById("brickWidth");
@@ -12,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let calculate = document.getElementById("calculate");
 
   select.addEventListener("change", () => {
+    console.log("Brick type changed:", select.value);
     if (
       select.value === "stdLg" ||
       select.value === "stdSm" ||
