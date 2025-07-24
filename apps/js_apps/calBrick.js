@@ -41,11 +41,6 @@ select.addEventListener("change", () => {
       brickWidth.value = 0.11;
       brickHeight.value = 0.07;
       break;
-    case "stdLg":
-      brickLength.value = 0.23;
-      brickWidth.value = 0.11;
-      brickHeight.value = 0.04;
-      break;
     case "select":
       brickLength.value = "";
       brickWidth.value = "";
