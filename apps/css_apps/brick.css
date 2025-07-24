@@ -4,6 +4,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
   background: linear-gradient(135deg, #a6e6ff, #fdffff);
 }
 
@@ -34,4 +35,10 @@ input::-webkit-inner-spin-button {
 .bold {
   color: black;
   font-weight: bold;
+}
+
+@media (min-width: 375px) {
+  .wrap {
+    transform: scaleY(0.82);
+  }
 }
