@@ -1,0 +1,24 @@
+{
+  "name": "civil_calc",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PSD24-art/calCivil.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PSD24-art/calCivil/issues"
+  },
+  "homepage": "https://github.com/PSD24-art/calCivil#readme",
+  "description": "",
+  "dependencies": {
+    "bootstrap": "^5.3.7",
+    "express": "^5.1.0"
+  }
+}
