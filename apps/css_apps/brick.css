@@ -37,7 +37,7 @@ input::-webkit-inner-spin-button {
   font-weight: bold;
 }
 
-@media (min-width: 375px) {
+@media (max-width: 375px) {
   .wrap {
     transform: scaleY(0.82);
   }
