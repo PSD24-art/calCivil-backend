@@ -1,41 +1,89 @@
-let input = document.getElementsByTagName("input");
 let brickLength = document.getElementById("brickLength");
 let brickHeight = document.getElementById("brickHeight");
 let brickWidth = document.getElementById("brickWidth");
-
+let select = document.getElementById("select");
 let wallWidth = document.getElementById("wallWidth");
 let wallHeight = document.getElementById("wallHeight");
 let wallLength = document.getElementById("wallLength");
-
+let wastage = document.getElementById("wastage");
 let result = document.getElementById("result");
 
 let calculate = document.getElementById("calculate");
 
+select.addEventListener("change", () => {
+  if (
+    select.value === "stdLg" ||
+    select.value === "stdSm" ||
+    select.value === "modLg" ||
+    select.value === "modLg"
+  ) {
+    brickLength.disabled = true;
+    brickWidth.disabled = true;
+    brickHeight.disabled = true;
+  } else {
+    brickLength.disabled = false;
+    brickWidth.disabled = false;
+    brickHeight.disabled = false;
+  }
+  switch (select.value) {
+    case "stdLg":
+      brickLength.value = 0.19;
+      brickWidth.value = 0.09;
+      brickHeight.value = 0.09;
+      break;
+    case "stdSm":
+      brickLength.value = 0.19;
+      brickWidth.value = 0.09;
+      brickHeight.value = 0.04;
+      break;
+    case "modLg":
+      brickLength.value = 0.23;
+      brickWidth.value = 0.11;
+      brickHeight.value = 0.07;
+      break;
+    case "stdLg":
+      brickLength.value = 0.23;
+      brickWidth.value = 0.11;
+      brickHeight.value = 0.04;
+      break;
+    case "select":
+      brickLength.value = "";
+      brickWidth.value = "";
+      brickHeight.value = "";
+  }
+});
+
 calculate.addEventListener("click", () => {
+  console.log("BrickHeigth: ", brickHeight.value);
   let brickVol = Volume(
-    Number(brickLength.value),
-    Number(brickHeight.value),
-    Number(brickWidth.value)
+    parseFloat(brickLength.value),
+    parseFloat(brickHeight.value),
+    parseFloat(brickWidth.value)
   );
   let wallVol = Volume(
-    Number(wallHeight.value),
-    Number(wallLength.value),
-    Number(wallWidth.value)
+    parseFloat(wallHeight.value),
+    parseFloat(wallLength.value),
+    parseFloat(wallWidth.value)
   );
 
   console.log("Brick Volume:", brickVol);
   console.log("Wall Volume:", wallVol);
 
-  result.value = `${Math.ceil(wallVol / brickVol)} Nos`;
-  result.classList.add("bold");
-  for (val of input) {
-    if (val.value === "") {
-      alert("Fields cannot be empty");
-      return;
-    }
+  if (brickVol <= 0 || wallVol <= 0) {
+    alert("Invalid dimensions. Volume cannot be zero or negative.");
+    return;
   }
+
+  let totalBricks = Math.ceil(wallVol / brickVol);
+
+  let wastePercentage = parseFloat(wastage.value);
+  result.value = `${Math.ceil(
+    totalBricks - totalBricks * wastePercentage
+  )} Nos`;
+
+  result.classList.add("bold");
 });
 
 function Volume(length, width, heigth) {
-  return parseFloat((length * width * heigth).toFixed(3));
+  return length * width * heigth;
 }
